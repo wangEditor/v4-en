@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>Get Started · wangEditor document</title>
+        <title>Split Toolbar And Area · wangEditor document</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -81,10 +81,10 @@
     <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="01-Basic Usage.html" />
+    <link rel="next" href="04-textarea.html" />
     
     
-    <link rel="prev" href="../../" />
+    <link rel="prev" href="02-edit hight.html" />
     
 
     </head>
@@ -128,7 +128,7 @@
             
         </li>
     
-        <li class="chapter active" data-level="1.2" data-path="./">
+        <li class="chapter " data-level="1.2" data-path="./">
             
                 <a href="./">
             
@@ -168,7 +168,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.2.3" data-path="03-split toolbar and Area.html">
+        <li class="chapter active" data-level="1.2.3" data-path="03-split toolbar and Area.html">
             
                 <a href="03-split toolbar and Area.html">
             
@@ -404,7 +404,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href="../.." >Get Started</a>
+        <a href="../.." >Split Toolbar And Area</a>
     </h1>
 </div>
 
@@ -428,7 +428,38 @@
     var s = document.getElementsByTagName("script")[0]; 
     s.parentNode.insertBefore(hm, s);
   })();
-</script></header><h1 id="get-started">Get started</h1>
+</script></header><h1 id="split-menus-and-editing-area">Split menus and editing area</h1>
+<p>Toolbar and editing area can be separated(in wangEditor just like Zhihu and so on).</p>
+<p>If that,Toolbar and editing area can controlle element respectively, that can custom styles. for example: fixed menu&#x3001;auto add editing area height and so on.</p>
+<pre><code>&lt;head&gt;
+    &lt;style&gt;
+        .toolbar {
+            border: 1px solid #ccc;
+        }
+        .text {
+            border: 1px solid #ccc;
+            min-height: 400px;
+        }
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;p&gt;
+        container and toolbar split
+    &lt;/p&gt;
+    &lt;div&gt;
+        &lt;div id=&quot;toolbar-container&quot; class=&quot;toolbar&quot;&gt;&lt;/div&gt;
+        &lt;p&gt;------ split line ------&lt;/p&gt;
+        &lt;div id=&quot;text-container&quot; class=&quot;text&quot;&gt;&lt;/div&gt;
+    &lt;/div&gt;
+
+    &lt;script src=&quot;//unpkg.com/wangeditor/dist/wangEditor.min.js&quot;&gt;&lt;/script&gt;
+    &lt;script&gt;
+        const E = window.wangEditor
+        const editor = new E(&apos;#toolbar-container&apos;, &apos;#text-container&apos;) // transfer two element
+        editor.create()
+    &lt;/script&gt;
+&lt;/body&gt;
+</code></pre><p>see upper code , menu and editing area is two <code>div</code>, position and size can set as whatever you want. </p>
 <footer class="page-footer"><span class="copyright">Copyright &#xA9; wangEditor (2020 - present) all right reserved&#xFF0C;powered by Gitbook</span><span class="footer-modification">File Modify: 
 2020-12-26 10:11:05
 </span></footer><footer></footer>
@@ -458,12 +489,12 @@
 
             
                 
-                <a href="../../" class="navigation navigation-prev " aria-label="Previous page: Introduction">
+                <a href="02-edit hight.html" class="navigation navigation-prev " aria-label="Previous page: Edit Hight">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
                 
-                <a href="01-Basic Usage.html" class="navigation navigation-next " aria-label="Next page: Basic Usage">
+                <a href="04-textarea.html" class="navigation navigation-next " aria-label="Next page: Textarea">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -474,7 +505,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Get Started","level":"1.2","depth":1,"next":{"title":"Basic Usage","level":"1.2.1","depth":2,"path":"pages/01-get started/01-Basic Usage.md","ref":"pages/01-get started/01-Basic Usage.md","articles":[]},"previous":{"title":"Introduction","level":"1.1","depth":1,"path":"README.md","ref":"README.md","articles":[]},"dir":"ltr"},"config":{"plugins":["advanced-emoji","todo","chapter-fold","-lunr","-search","search-pro","github","splitter","tbfed-pagefooter","donate","hide-element","summary","extra-html"],"root":"docs","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright &copy wangEditor (2020 - present)"},"chapter-fold":{},"github":{"url":"https://github.com/wangeditor-team/wangeditor"},"todo":{},"summary":{},"splitter":{},"search-pro":{},"extra-html":{"footer":{},"header":{"files":["extra-html-files/baidu-tongji.html"]}},"donate":{"title":"","button":"donate","wechat":"http://www.wangeditor.com/imgs/wechat-pay.jpeg","alipay":"http://www.wangeditor.com/imgs/ali-pay.jpeg","wechatText":"","alipayText":""},"hide-element":{"elements":[".gitbook-link"]},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"advanced-emoji":{"embedEmojis":false},"sharing":{"facebook":false,"twitter":false,"google":false,"weibo":true,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"wangfupeng","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"wangEditor document","language":"en","gitbook":"*","description":"wangEditor document"},"file":{"path":"pages/01-get started/README.md","mtime":"2020-12-26T10:11:05.381Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-12-26T10:11:53.534Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Split Toolbar And Area","level":"1.2.3","depth":2,"next":{"title":"Textarea","level":"1.2.4","depth":2,"path":"pages/01-get started/04-textarea.md","ref":"pages/01-get started/04-textarea.md","articles":[]},"previous":{"title":"Edit Hight","level":"1.2.2","depth":2,"path":"pages/01-get started/02-edit hight.md","ref":"pages/01-get started/02-edit hight.md","articles":[]},"dir":"ltr"},"config":{"plugins":["advanced-emoji","todo","chapter-fold","-lunr","-search","search-pro","github","splitter","tbfed-pagefooter","donate","hide-element","summary","extra-html"],"root":"docs","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright &copy wangEditor (2020 - present)"},"chapter-fold":{},"github":{"url":"https://github.com/wangeditor-team/wangeditor"},"todo":{},"summary":{},"splitter":{},"search-pro":{},"extra-html":{"footer":{},"header":{"files":["extra-html-files/baidu-tongji.html"]}},"donate":{"title":"","button":"donate","wechat":"http://www.wangeditor.com/imgs/wechat-pay.jpeg","alipay":"http://www.wangeditor.com/imgs/ali-pay.jpeg","wechatText":"","alipayText":""},"hide-element":{"elements":[".gitbook-link"]},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"advanced-emoji":{"embedEmojis":false},"sharing":{"facebook":false,"twitter":false,"google":false,"weibo":true,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"wangfupeng","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"wangEditor document","language":"en","gitbook":"*","description":"wangEditor document"},"file":{"path":"pages/01-get started/03-split toolbar and Area.md","mtime":"2020-12-26T10:11:05.381Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-12-26T10:11:53.534Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>
