@@ -1273,26 +1273,45 @@ class AlertMenu extends BtnMenu {
 }
 </code></pre><p><img src="../../images/menu-active.png" alt="menu-active.png"></p>
 <h1 id="register-menu">Register Menu</h1>
-<pre><code>const editor = new E(&apos;#div1&apos;)
-
-// register menu 
+<p>[Tips]It&apos;s recommended to use the global mode to register the menu. If there are multiple editors and the custom menu of each editor is different, using the Instance mode to register the menu.</p>
+<h2 id="global-mode">Global Mode</h2>
+<pre><code>// register menu 
 const menuKey = &apos;alertMenuKey&apos; // menu key &#xFF0C;must be unique
 
-editor.menus.extend(&apos;alertMenuKey&apos;, AlertMenu)
+E.registerMenu(menuKey, AlertMenu)
+
+const editor = new E(&apos;#div1&apos;)
+editor.create()
+
+const editor2 = new E(&apos;#div2&apos;)
+editor2.create()
+</code></pre><h2 id="instance-mode">Instance Mode</h2>
+<pre><code>const menuKey = &apos;alertMenuKey&apos;  // menu key &#xFF0C;must be unique
+const menuKey2 = &apos;alertMenuKey2&apos;
+
+const editor = new E(&apos;#div1&apos;)
+// register menu 
+editor.menus.extend(menuKey, AlertMenu)
 
 // put menu in  editor.config.menus 
 // You can also adjust the order of the menus through the configuration menus, refer to the document in the [Configuration Menu] section
+//editor.config.menus.push(menuKey)
 editor.config.menus = editor.config.menus.concat(menuKey)
 
 // After registering the menu, then create the editor, the order is very important
 editor.create()
+
+const editor2 = new E(&apos;#div2&apos;)
+editor2.menus.extend(menuKey2, AlertMenu)
+editor2.config.menus.push(menuKey2)
+editor2.create()
 </code></pre><p><img src="../../images/custom-button-menu.png" alt="custom-button-menu.png"></p>
 <h1 id="typescript">TypeScript</h1>
 <p>In the next document, when you refer to the source code to develop  DropList, Panel, Tooltip, if you use TypeScript to develop, you may use some built-in types of wangEditor, which can be obtained in this way</p>
 <p>&#x3010;Tip&#x3011; wangEditor version &gt;= v4.0.6 &#x3002;</p>
 <pre><code>import { DropListConf, DropListItem, PanelTabConf, PanelConf, TooltipConfItemType } from &apos;wangeditor&apos;
 </code></pre><footer class="page-footer"><span class="copyright">Copyright &#xA9; wangEditor (2020 - present) all right reserved&#xFF0C;powered by Gitbook</span><span class="footer-modification">File Modify: 
-2021-01-21 00:30:59
+2021-01-25 10:13:21
 </span></footer><footer></footer>
                                 
                                 </section>
@@ -1336,7 +1355,7 @@ editor.create()
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Quickly Expand A Menu","level":"2.11.1","depth":2,"next":{"title":"Button Menu","level":"2.11.2","depth":2,"path":"pages/11-custom-menu/02-Button menu.md","ref":"pages/11-custom-menu/02-Button menu.md","articles":[]},"previous":{"title":"Custom Menu","level":"2.11","depth":1,"path":"pages/11-custom-menu/README.md","ref":"pages/11-custom-menu/README.md","articles":[{"title":"Quickly Expand A Menu","level":"2.11.1","depth":2,"path":"pages/11-custom-menu/01-quickly expand a menu.md","ref":"pages/11-custom-menu/01-quickly expand a menu.md","articles":[]},{"title":"Button Menu","level":"2.11.2","depth":2,"path":"pages/11-custom-menu/02-Button menu.md","ref":"pages/11-custom-menu/02-Button menu.md","articles":[]},{"title":"DropList Menu","level":"2.11.3","depth":2,"path":"pages/11-custom-menu/03-DropList menu.md","ref":"pages/11-custom-menu/03-DropList menu.md","articles":[]},{"title":"Panel Menu","level":"2.11.4","depth":2,"path":"pages/11-custom-menu/04-Panel menu.md","ref":"pages/11-custom-menu/04-Panel menu.md","articles":[]},{"title":"Custom Tooltip","level":"2.11.5","depth":2,"path":"pages/11-custom-menu/05-custom tooltip.md","ref":"pages/11-custom-menu/05-custom tooltip.md","articles":[]},{"title":"Event Hooks","level":"2.11.6","depth":2,"path":"pages/11-custom-menu/06-event hooks.md","ref":"pages/11-custom-menu/06-event hooks.md","articles":[]},{"title":"More Reference","level":"2.11.7","depth":2,"path":"pages/11-custom-menu/07-more reference.md","ref":"pages/11-custom-menu/07-more reference.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["advanced-emoji","todo","chapter-fold","-lunr","-search","search-pro","github","splitter","tbfed-pagefooter","donate","hide-element","summary","extra-html"],"root":"docs","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright &copy wangEditor (2020 - present)"},"chapter-fold":{},"github":{"url":"https://github.com/wangeditor-team/wangeditor"},"todo":{},"summary":{},"splitter":{},"search-pro":{},"extra-html":{"footer":{},"header":{"files":["extra-html-files/baidu-tongji.html"]}},"donate":{"title":"","button":"donate","wechat":"http://www.wangeditor.com/imgs/wechat-pay.jpeg","alipay":"http://www.wangeditor.com/imgs/ali-pay.jpeg","wechatText":"","alipayText":""},"hide-element":{"elements":[".gitbook-link"]},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"advanced-emoji":{"embedEmojis":false},"sharing":{"facebook":false,"twitter":false,"google":false,"weibo":true,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"wangfupeng","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"wangEditor document","language":"en","gitbook":"*","description":"wangEditor document"},"file":{"path":"pages/11-custom-menu/01-quickly expand a menu.md","mtime":"2021-01-21T00:30:59.595Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-01-21T00:31:56.194Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Quickly Expand A Menu","level":"2.11.1","depth":2,"next":{"title":"Button Menu","level":"2.11.2","depth":2,"path":"pages/11-custom-menu/02-Button menu.md","ref":"pages/11-custom-menu/02-Button menu.md","articles":[]},"previous":{"title":"Custom Menu","level":"2.11","depth":1,"path":"pages/11-custom-menu/README.md","ref":"pages/11-custom-menu/README.md","articles":[{"title":"Quickly Expand A Menu","level":"2.11.1","depth":2,"path":"pages/11-custom-menu/01-quickly expand a menu.md","ref":"pages/11-custom-menu/01-quickly expand a menu.md","articles":[]},{"title":"Button Menu","level":"2.11.2","depth":2,"path":"pages/11-custom-menu/02-Button menu.md","ref":"pages/11-custom-menu/02-Button menu.md","articles":[]},{"title":"DropList Menu","level":"2.11.3","depth":2,"path":"pages/11-custom-menu/03-DropList menu.md","ref":"pages/11-custom-menu/03-DropList menu.md","articles":[]},{"title":"Panel Menu","level":"2.11.4","depth":2,"path":"pages/11-custom-menu/04-Panel menu.md","ref":"pages/11-custom-menu/04-Panel menu.md","articles":[]},{"title":"Custom Tooltip","level":"2.11.5","depth":2,"path":"pages/11-custom-menu/05-custom tooltip.md","ref":"pages/11-custom-menu/05-custom tooltip.md","articles":[]},{"title":"Event Hooks","level":"2.11.6","depth":2,"path":"pages/11-custom-menu/06-event hooks.md","ref":"pages/11-custom-menu/06-event hooks.md","articles":[]},{"title":"More Reference","level":"2.11.7","depth":2,"path":"pages/11-custom-menu/07-more reference.md","ref":"pages/11-custom-menu/07-more reference.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["advanced-emoji","todo","chapter-fold","-lunr","-search","search-pro","github","splitter","tbfed-pagefooter","donate","hide-element","summary","extra-html"],"root":"docs","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright &copy wangEditor (2020 - present)"},"chapter-fold":{},"github":{"url":"https://github.com/wangeditor-team/wangeditor"},"todo":{},"summary":{},"splitter":{},"search-pro":{},"extra-html":{"footer":{},"header":{"files":["extra-html-files/baidu-tongji.html"]}},"donate":{"title":"","button":"donate","wechat":"http://www.wangeditor.com/imgs/wechat-pay.jpeg","alipay":"http://www.wangeditor.com/imgs/ali-pay.jpeg","wechatText":"","alipayText":""},"hide-element":{"elements":[".gitbook-link"]},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"advanced-emoji":{"embedEmojis":false},"sharing":{"facebook":false,"twitter":false,"google":false,"weibo":true,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"wangfupeng","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"wangEditor document","language":"en","gitbook":"*","description":"wangEditor document"},"file":{"path":"pages/11-custom-menu/01-quickly expand a menu.md","mtime":"2021-01-25T10:13:21.260Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-01-25T10:14:15.305Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>
